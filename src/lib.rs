@@ -130,7 +130,7 @@ fn remove_identifiers(module: &mut naga::Module) {
 /// Does not remove names on entry points, or on constants with overrides.
 pub fn minify_module(module: &mut naga::Module) {
     // Compact
-    naga::compact::compact(module);
+    naga::compact::compact(module, naga::compact::KeepUnused::Yes);
     // Remove any remaining identifiers
     remove_identifiers(module);
 }

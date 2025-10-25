@@ -12,12 +12,12 @@ categories = ["game-development", "graphics"]
 include = ["/Cargo.toml", "/LICENSE", "/README.md", "/src/**"]
 
 [dependencies]
-naga = { version = "24.0", features = ["wgsl-in", "wgsl-out"] } # Breaking change to update - API takes Naga module
+naga = { version = "26.0", features = ["wgsl-in", "wgsl-out"] } # Breaking change to update - API takes Naga module
 unicode-ident = "1.0"
 
 # Used for main
 clap = { version = "4.5", features = ["cargo"], optional = true }
-codespan-reporting = { version = "0.12", optional = true }
+codespan-reporting = { version = "0.13", optional = true }
 
 [features]
 bin = ["clap", "codespan-reporting"]
@@ -25,3 +25,6 @@ bin = ["clap", "codespan-reporting"]
 [[bin]]
 name = "wgsl-minifier"
 required-features = ["bin"]
+
+[dev-dependencies]
+pretty_assertions = "1.4.1"
