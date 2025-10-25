@@ -3,16 +3,18 @@ name = "wgsl-minifier"
 version = "0.7.0"
 edition = "2021"
 license = "MIT"
+
 description = "A command-line tool for minifying WGSL shaders."
 homepage = "https://github.com/LucentFlux/wgsl-minifier"
 repository = "https://github.com/LucentFlux/wgsl-minifier"
+
 readme = "README.md"
 keywords = ["gamedev", "graphics", "wgsl", "wgpu", "shader"]
-categories = ["game-development", "graphics"]
+categories = ["development-tools::build-utils", "game-development", "graphics"]
 include = ["/Cargo.toml", "/LICENSE", "/README.md", "/src/**"]
 
 [dependencies]
-naga = { version = "26.0", features = ["wgsl-in", "wgsl-out"] } # Breaking change to update - API takes Naga module
+naga = { version = "27.0", features = ["wgsl-in", "wgsl-out"] }
 unicode-ident = "1.0"
 
 # Used for main
@@ -27,4 +29,4 @@ name = "wgsl-minifier"
 required-features = ["bin"]
 
 [dev-dependencies]
-pretty_assertions = "1.4.1"
+pretty_assertions = "1.4"
