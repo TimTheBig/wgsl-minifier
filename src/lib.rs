@@ -199,13 +199,15 @@ pub fn minify_wgsl_source(src: &str) -> String {
     let mut to_drop_stack = Vec::new();
     for (i, c) in src.chars().enumerate() {
         if let Some(outer_end) = parentheses.get(&i)
-        && let Some(inner_end) = parentheses.get(&(i + 1))
-        && *outer_end == *inner_end + 1 {
+            && let Some(inner_end) = parentheses.get(&(i + 1))
+            && *outer_end == *inner_end + 1
+        {
             to_drop_stack.push(*outer_end);
             continue;
         }
         if let Some(next_to_skip) = to_drop_stack.last()
-        && *next_to_skip == i {
+            && *next_to_skip == i
+        {
             to_drop_stack.pop();
             continue;
         }
