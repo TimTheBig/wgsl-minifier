@@ -1,6 +1,6 @@
 [package]
 name = "wgsl-minifier"
-version = "0.7.0"
+version = "0.8.0"
 edition = "2024"
 license = "MIT"
 
@@ -14,7 +14,7 @@ categories = ["development-tools::build-utils", "game-development", "graphics"]
 include = ["/Cargo.toml", "/LICENSE", "/README.md", "/src/**"]
 
 [dependencies]
-naga = { version = "27.0", features = ["wgsl-in", "wgsl-out"] }
+naga = { version = "28.0", features = ["wgsl-in", "wgsl-out"] }
 unicode-ident = "1.0"
 
 # Used for main
